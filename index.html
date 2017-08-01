@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Train Scheduler</title>
+
+  <!-- BOOTSTRAP LINK -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS LINK -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- MOMENT.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js" integrity="sha256-1hjUhpc44NwiNg8OwMu2QzJXhD8kcj+sJA3aCQZoUjg=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron text-center myJumbotron">
+      <h1>Any Time is Train Time</h1>
+      <h4>Chugga Chugga Choo Choo!</h4>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Current Employees</div>
+        <table class="table">
+          <thead>
+          <tr>
+            <td><b>Train Name</b></td>
+            <td><b>Destination</b></td>
+            <td><b>Frequency (min)</b></td>
+            <td><b>Next Arrival</b></td>
+            <td><b>Minutes Away</b></td>
+          </tr>
+          </thead>
+          <tbody class="trainTable"></tbody>
+        </table>
+    </div>
+  </div>
+
+  <div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Add Train</div>
+    <form style="padding:8px;">
+    <div class="form-group">
+      <label for="">Train Name</label>
+      <input type="text" class="form-control" id="trainName" placeholder="ex: The Polar Express" required>
+    </div>
+    <div class="form-group">
+      <label for="">Destination</label>
+      <input type="text" class="form-control" id="destination" placeholder="ex: The North Pole" required>
+    </div>
+    <div class="form-group">
+      <label for="">First Train Time (HH:mm - military time)</label>
+      <input type="text" class="form-control" id="firstTrain" placeholder="ex: 22:00" required>
+    </div>
+    <div class="form-group">
+      <label for="">Frequency (min)</label>
+      <input type="text" class="form-control" id="frequency" placeholder="ex: 525600" required>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" id="addTrain">Submit</button>
+    </form>
+  </div> <!-- end of panel -->
+</div>
+
+  <!-- JQUERY LINK -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDggYXCQ2LK71oTpCN8w0vTJOxpDeTpvqM",
+    authDomain: "trainscheduler-92a79.firebaseapp.com",
+    databaseURL: "https://trainscheduler-92a79.firebaseio.com",
+    projectId: "trainscheduler-92a79",
+    storageBucket: "",
+    messagingSenderId: "202377964002"
+  };
+  firebase.initializeApp(config);
+</script>
+  <!-- JAVASCRPIPT LINK -->
+  <script src="assets/javascript/logic.js"></script>
+</body>
+
+</html>
