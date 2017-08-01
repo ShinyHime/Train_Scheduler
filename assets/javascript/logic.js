@@ -4,8 +4,6 @@ var database = firebase.database();
 $("#addTrain").on("click", function(event) {
   event.preventDefault();
 
-  console.log('working');
-
   var trainName = $('#trainName').val().trim();
   var destination = $("#destination").val().trim();
   var firstTrain = $("#firstTrain").val().trim();
